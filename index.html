@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenGuard - Eco Awareness App</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fdf4;
+      color: #1f2937;
+    }
+
+    header {
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #15803d;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background: #dcfce7;
+      padding: 18px;
+      border-radius: 12px;
+      border-left: 5px solid #16a34a;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #15803d;
+    }
+
+    .result {
+      margin-top: 15px;
+      padding: 15px;
+      background: #bbf7d0;
+      border-radius: 8px;
+      display: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #14532d;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>GreenGuard</h1>
+    <p>Smart Eco Awareness and Pollution Reduction Guide</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>About GreenGuard</h2>
+      <p>
+        GreenGuard is a simple open-source web project that helps users understand
+        eco-friendly habits and encourages pollution reduction through small daily actions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Eco Score Checker</h2>
+      <p>Enter how many eco-friendly actions you did today.</p>
+
+      <input type="number" id="actions" placeholder="Example: 5">
+
+      <button onclick="checkScore()">Check Eco Score</button>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <div class="card">
+      <h2>Key Features</h2>
+
+      <div class="features">
+        <div class="box">
+          <h3>Eco Awareness</h3>
+          <p>Educates users about daily green habits.</p>
+        </div>
+
+        <div class="box">
+          <h3>Simple Score</h3>
+          <p>Gives a basic eco score based on user actions.</p>
+        </div>
+
+        <div class="box">
+          <h3>Open Source</h3>
+          <p>Allows contributors to improve features and content.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Eco Tips</h2>
+      <ul>
+        <li>Use public transport or bicycles.</li>
+        <li>Switch off lights and fans when not in use.</li>
+        <li>Reduce plastic usage.</li>
+        <li>Plant trees and protect green spaces.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>GreenGuard | OSS Organization Project | GitHub Collaboration</p>
+  </footer>
+
+  <script>
+    function checkScore() {
+      let actions = Number(document.getElementById("actions").value);
+      let result = document.getElementById("result");
+
+      result.style.display = "block";
+
+      if (actions >= 8) {
+        result.innerHTML = "Excellent! You are a Green Champion.";
+      } else if (actions >= 4) {
+        result.innerHTML = "Good effort! Try to follow more eco-friendly habits.";
+      } else {
+        result.innerHTML = "Start small! Save electricity, avoid plastic, and plant trees.";
+      }
+    }
+  </script>
+
+</body>
+</html>
